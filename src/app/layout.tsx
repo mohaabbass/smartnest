@@ -25,7 +25,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="h-44 bg-gradient-to-br from-[#8BC6EC] to-[#9599E2] rounded-b-3xl shadow-md">
+          <div className="h-44 bg-gradient-to-br from-[#2B88B9] to-[#53CBC9] rounded-b-3xl shadow-md">
             <Header />
             {children}
           </div>
