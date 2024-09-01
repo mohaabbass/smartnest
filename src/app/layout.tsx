@@ -25,8 +25,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          {children}
+          <div className="h-44 bg-gradient-to-br from-[#2B88B9] via-[#19B3BE] to-[#53CBC9] rounded-b-3xl shadow-md">
+            <Header />
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>

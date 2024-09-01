@@ -11,7 +11,7 @@ const Navbar = () => {
     <div className="flex ml-auto">
       <Sheet>
         <SheetTrigger>
-          <span className="text-xl cursor-pointer">
+          <span className="text-xl cursor-pointer text-white">
             <TfiAlignRight />
           </span>
         </SheetTrigger>
