@@ -44,7 +44,11 @@ export default function ElectricityStart() {
   });
 
   const priceToShow = currentPrice ? (
-    currentPrice.SEK_per_kWh.toFixed(2)
+    includeVAT ? (
+      (currentPrice.SEK_per_kWh * 1.25).toFixed(2)
+    ) : (
+      currentPrice.SEK_per_kWh.toFixed(2)
+    )
   ) : (
     <Loader />
   );
