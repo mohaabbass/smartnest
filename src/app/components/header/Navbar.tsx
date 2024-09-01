@@ -16,7 +16,7 @@ const Navbar = () => {
           </span>
         </SheetTrigger>
         <SheetContent>
-          <div className="h-full">
+          <div className="h-full font-default">
             <nav className="flex h-[90%] items-center justify-center text-2xl">
               <ul className="text-center">
                 <Link href="/">
