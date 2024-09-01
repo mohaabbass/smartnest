@@ -4,13 +4,14 @@ import { useEffect, useState } from "react";
 import { FaCircleChevronDown, FaCircleChevronUp } from "react-icons/fa6";
 import Loader from "../ui/loader/Loader";
 import { VscCircleFilled } from "react-icons/vsc";
-import { PiWashingMachine, PiOvenLight } from "react-icons/pi";
+import { Switch } from "@/components/ui/switch";
 
 export default function ElectricityStart() {
   const [electricityData, setElectricityData] = useState<any[]>([]);
   const [expandElectricity, setExpandElectricity] = useState(false);
-  const currentDate = new Date();
+  const [includeVAT, setIncludeVAT] = useState(false);
 
+  const currentDate = new Date();
   const year = currentDate.getFullYear();
   const month = String(currentDate.getMonth() + 1).padStart(2, "0");
   const day = String(currentDate.getDate()).padStart(2, "0");
@@ -21,6 +22,10 @@ export default function ElectricityStart() {
 
   const handleExpandElectricity = () => {
     setExpandElectricity(!expandElectricity);
+  };
+
+  const handleIncludeVAT = () => {
+    setIncludeVAT(!includeVAT);
   };
 
   const fetchElectricityData = async () => {
@@ -55,6 +60,10 @@ export default function ElectricityStart() {
     return `${startTimeFormatted} - ${endTimeFormatted}`;
   }
 
+  const currentTimeRange = currentPrice
+    ? formatTimeRange(currentPrice.time_start, currentPrice.time_end)
+    : "";
+
   return (
     <div className="relative border rounded-md shadow-md bg-gradient-to-br from-[#2B88B9] via-[#19B3BE] to-[#53CBC9] font-default">
       <span className="absolute text-xs bg-orange-400 text-white rounded-sm py-1 px-3 top-[-10px] left-[10px]">
@@ -62,7 +71,7 @@ export default function ElectricityStart() {
       </span>
       <section className="flex items-center justify-center pt-6">
         <div className="flex flex-col items-center justify-center">
-          <p className="text-white text-sm">Now</p>
+          <p className="text-white text-sm">{currentTimeRange || "Now"}</p>
           <span className="text-white font-bold text-5xl my-2">
             {priceToShow}
           </span>
@@ -75,8 +84,19 @@ export default function ElectricityStart() {
           expandElectricity ? "max-h-[1200px] mb-4" : "max-h-0"
         } overflow-hidden transition-[max-height] duration-500 ease-in-out bg-white mx-5 mt-6 rounded-md`}
       >
+        <div className="flex items-center justify-end px-4 py-4 bg-slate-100">
+          <p className="mr-auto text-sm">
+            {day}-{month}-{year}
+          </p>
+          <p className="text-sm mr-2">Ink moms</p>
+          {includeVAT ? (
+            <Switch onCheckedChange={handleIncludeVAT} />
+          ) : (
+            <Switch onCheckedChange={handleIncludeVAT} />
+          )}
+        </div>
         <ul className="relative mx-3 text-sm font-default">
-          <li className="flex p-3 border-b font-semibold">
+          <li className="flex px-3 py-4 border-b font-semibold">
             <div>Time</div>
             <div className="ml-auto">kr/kWh</div>
           </li>
@@ -98,7 +118,9 @@ export default function ElectricityStart() {
                   {formatTimeRange(post.time_start, post.time_end)}
                 </div>
                 <div className="flex items-center justify-center ml-auto">
-                  {post.SEK_per_kWh.toFixed(2)}{" "}
+                  {!includeVAT
+                    ? post.SEK_per_kWh.toFixed(2)
+                    : (post.SEK_per_kWh * 1.25).toFixed(2)}
                   <span>
                     <VscCircleFilled
                       className={`
