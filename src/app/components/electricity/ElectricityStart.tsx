@@ -149,12 +149,12 @@ export default function ElectricityStart() {
       <div className="flex items-center justify-center mt-2">
         {!expandElectricity ? (
           <FaCircleChevronDown
-            className="w-6 h-6 text-[#19B3BE] mb-4 rounded-t-full cursor-pointer"
+            className="w-6 h-6 text-[#8BC6EC] mb-4 rounded-t-full cursor-pointer"
             onClick={handleExpandElectricity}
           />
         ) : (
           <FaCircleChevronUp
-            className="w-6 h-6 text-[#19B3BE] mb-4 rounded-t-full cursor-pointer"
+            className="w-6 h-6 text-[#8BC6EC] mb-4 rounded-t-full cursor-pointer"
             onClick={handleExpandElectricity}
           />
         )}
