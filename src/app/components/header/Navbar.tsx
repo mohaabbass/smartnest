@@ -18,7 +18,7 @@ const Navbar = () => {
         <SheetContent>
           <div className="h-full font-default">
             <nav className="flex h-[90%] items-center justify-center text-2xl">
-              <ul className="text-center">
+              <ul className="text-center tracking-wider">
                 <Link href="/">
                   <li className="py-2">Home</li>
                 </Link>
