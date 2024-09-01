@@ -33,17 +33,15 @@ export default async function ElectricityStart() {
   console.log("Current Price", priceToShow);
 
   return (
-    <div className="relative border rounded-md shadow-md bg-gradient-to-br from-[#5E9DD2] via-[#AC6BAF] to-[#F27FA9]">
-      <span className="absolute text-xs bg-orange-400 text-white rounded-sm py-1 px-3 top-[-10px] left-[10px]">
+    <div className="relative border rounded-md shadow-md">
+      <span className="absolute text-xs bg-orange-400 rounded-sm py-1 px-3 top-[-10px] left-[10px]">
         Electricity
       </span>
       <section className="flex items-center justify-center pt-6">
         <div className="flex flex-col items-center justify-center">
-          <p className="text-white text-sm">Just nu</p>
-          <span className="text-white font-bold text-5xl my-2">
-            {priceToShow}
-          </span>
-          <p className="text-white text-sm">kr/kWh</p>
+          <p className="text-sm">Just nu</p>
+          <span className="font-bold text-5xl my-2">{priceToShow}</span>
+          <p className="text-sm">kr/kWh</p>
         </div>
       </section>
       <Link href="/electricity" className="flex items-center justify-end">
