@@ -69,8 +69,8 @@ export default function ElectricityStart() {
     : "";
 
   return (
-    <div className="relative border rounded-xl shadow-sm bg-white font-default">
-      <span className="absolute text-xs bg-orange-400 text-white rounded-sm py-1 px-3 top-[-10px] left-[16px] tracking-wide">
+    <div className="relative border rounded-xl shadow-slate-200 shadow-sm bg-white font-default mb-6">
+      <span className="absolute text-xs bg-orange-400 text-white rounded-sm py-1 px-3 top-[-10px] left-[16px] tracking-wide shadow-sm">
         Electricity
       </span>
       <section className="flex items-center justify-center pt-6">
