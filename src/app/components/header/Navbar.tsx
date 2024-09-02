@@ -29,7 +29,7 @@ const Navbar = () => {
                   <li className="py-2">Food</li>
                 </Link>
                 <Link href="/economy">
-                  <li className="py-2">Ecomomy</li>
+                  <li className="py-2">Economy</li>
                 </Link>
                 <Link href="/other">
                   <li className="py-2">Other</li>

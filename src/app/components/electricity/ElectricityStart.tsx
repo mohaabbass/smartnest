@@ -5,11 +5,12 @@ import { FaCircleChevronDown, FaCircleChevronUp } from "react-icons/fa6";
 import Loader from "../ui/loader/Loader";
 import { VscCircleFilled } from "react-icons/vsc";
 import { Switch } from "@/components/ui/switch";
+import { TiFlashOutline } from "react-icons/ti";
 
 export default function ElectricityStart() {
   const [electricityData, setElectricityData] = useState<any[]>([]);
   const [expandElectricity, setExpandElectricity] = useState(false);
-  const [includeVAT, setIncludeVAT] = useState(false);
+  const [includeVAT, setIncludeVAT] = useState(true);
 
   const currentDate = new Date();
   const year = currentDate.getFullYear();
@@ -76,7 +77,7 @@ export default function ElectricityStart() {
       <section className="flex items-center justify-center pt-6">
         <div className="flex flex-col items-center justify-center">
           <p className="text-sm">{currentTimeRange || "Now"}</p>
-          <span className=" font-bold text-5xl my-2 text-slate-600">
+          <span className="font-bold text-5xl my-2 text-slate-600">
             {priceToShow}
           </span>
           <p className="text-sm">kr/kWh</p>
@@ -94,9 +95,9 @@ export default function ElectricityStart() {
           </p>
           <p className="text-sm mr-2">Ink moms</p>
           {includeVAT ? (
-            <Switch onCheckedChange={handleIncludeVAT} />
+            <Switch onCheckedChange={handleIncludeVAT} checked={true} />
           ) : (
-            <Switch onCheckedChange={handleIncludeVAT} />
+            <Switch onCheckedChange={handleIncludeVAT} checked={false} />
           )}
         </div>
         <ul className="relative mx-3 text-sm font-default">
