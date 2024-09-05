@@ -18,6 +18,7 @@ export default function ElectricityStart() {
 
   useEffect(() => {
     fetchElectricityData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleExpandElectricity = () => {
