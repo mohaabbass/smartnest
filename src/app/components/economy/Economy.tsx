@@ -2,8 +2,16 @@
 
 import { useEffect, useState } from "react";
 import { FaCircleChevronDown, FaCircleChevronUp } from "react-icons/fa6";
-import Loader from "../ui/loader/Loader";
 import { LiaCoinsSolid } from "react-icons/lia";
+
+interface IBank {
+  name: string;
+  monthlyFee: string;
+  monthlyInterest: string;
+  invoiceFee: string;
+  otherFees: string;
+  totalLoan: string;
+}
 
 export default function Economy() {
   const [expandElectricity, setExpandElectricity] = useState(false);
@@ -14,7 +22,7 @@ export default function Economy() {
     return banks;
   };
 
-  const [bankData, setBankData] = useState([]);
+  const [bankData, setBankData] = useState<IBank[]>([]);
 
   useEffect(() => {
     fetchEconomy().then((bank) => {

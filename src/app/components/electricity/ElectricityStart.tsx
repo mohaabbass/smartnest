@@ -5,7 +5,6 @@ import { FaCircleChevronDown, FaCircleChevronUp } from "react-icons/fa6";
 import Loader from "../ui/loader/Loader";
 import { VscCircleFilled } from "react-icons/vsc";
 import { Switch } from "@/components/ui/switch";
-import { TiFlashOutline } from "react-icons/ti";
 
 export default function ElectricityStart() {
   const [electricityData, setElectricityData] = useState<any[]>([]);
