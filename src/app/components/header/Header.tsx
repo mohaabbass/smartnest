@@ -9,7 +9,7 @@ const Header = () => {
     <header className="flex px-6 py-6">
       <Link href="/" className="flex tracking-wide">
         <SiKasasmart className="w-5 h-5 text-white" />
-        <p className="text-white ml-2">SmartNest</p>
+        <p className="text-white ml-2">nestaide</p>
       </Link>
       <Navbar />
     </header>
