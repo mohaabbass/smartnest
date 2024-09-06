@@ -47,7 +47,7 @@ export default function Economy() {
       </span>
       <section className="flex items-center justify-center py-6">
         <div className="flex flex-col items-center justify-center">
-          <p className="text-sm">Totalt lån kvar</p>
+          <p className="text-sm">Total loan</p>
           <div className="flex flex-col justify-center items-center">
             <span className="flex items-center text-3xl mt-2 text-slate-600">
               <LiaCoinsSolid className="w-6 h-6 mr-2" />{" "}
