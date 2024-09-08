@@ -1,10 +1,7 @@
 import { MongoClient } from "mongodb";
 
 const uri: string = process.env.MONGODB_URI || "mongodb://localhost:27017";
-const options = {
-  useUnifiedTopology: true,
-  useNewUrlParser: true,
-};
+const options = {};
 
 let client: MongoClient;
 let clientPromise: Promise<MongoClient>;
